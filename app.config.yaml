@@ -1,0 +1,24 @@
+application:
+  actions: actions
+  runtimeManifest:
+    packages:
+      livestream:
+        license: Apache-2.0
+        actions:
+          generic:
+            function: actions/generic/index.js
+            web: 'yes'
+            runtime: nodejs:16
+            inputs:
+              LOG_LEVEL: debug
+              ORG_ID: $ORG_ID
+              CLIENT_ID: $CLIENT_ID
+              CLIENT_SECRET: $CLIENT_SECRET
+              PRIVATE_KEY: $PRIVATE_KEY
+              META_SCOPES: $META_SCOPES
+              SCOPES: $SCOPES
+              TECHNICAL_ACCOUNT_ID: $TECHNICAL_ACCOUNT_ID
+              TECHNICAL_ACCOUNT_EMAIL: $TECHNICAL_ACCOUNT_EMAIL
+            annotations:
+              require-adobe-auth: false
+              final: true
